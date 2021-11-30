@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Busqueda de productos" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-30T03:15:26" hostname="DESKTOP-COLAIO2" time="120.698">
+  <properties/>
+  <testcase name="Realizar busqueda de productos por medio de la caja de texto" classname="Busqueda de productos" time="120.698"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}) on port 31173
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+nov 29, 2021 10:15:30 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMACIÓN: Detected dialect: W3C
+ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+]]></system-err>
+</testsuite>
