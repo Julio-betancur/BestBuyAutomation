@@ -23,13 +23,14 @@ public class BestBuytStepDefinition {
         SeleniumWebDriver.chrome("https://www.bestbuy.com/");
     }
 
-    @When("^Ingreso el nombre de un producto en la caja de texto y doy clic en la lupa$")
-    public void ingresoElNombreDeUnProductoEnLaCajaDeTextoYDoyClicEnLaLupa() throws IOException {
+    @When("^Ingreso el nombre de un producto en la caja de texto, doy clic en la lupa y selecciono un producto del listado$")
+    public void ingresoElNombreDeUnProductoEnLaCajaDeTextoDoyClicEnLaLupaYSeleccionoUnProductoDelListado() {
         steps.search();
     }
 
-    @Then("^la pagina me muestra un listado de productos que coinciden con el que busque$")
-    public void laPaginaMeMuestraUnListadoDeProductosQueCoincidenConElQueBusque() {
+    @Then("^la pagina me muestra un producto que coincide con el buscado$")
+    public void laPaginaMeMuestraUnProductoQueCoincideConElBuscado() {
+
     }
 
 }

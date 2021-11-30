@@ -39,8 +39,9 @@ public class SearchSteps {
 
     @Step
     public void search() {
-        click(locators.getUsaBtn());
+        click(locators.getUsaBtn()); //Selecciona pais
 
+        //Cargamos datos desde el excel
         try {
             data = Excel.readExcel("TerminosBusqueda.xlsx", "Hoja1");
         } catch (IOException e) {
@@ -48,20 +49,27 @@ public class SearchSteps {
             e.printStackTrace();
         }
 
-        //Espera hasta que searchBar  esta visible
+        //Esperamos si aparece el modal para suscribirse, si aparece se cierra
+        waitUntilVisibility(locators.getCloseModalBtn());
+
+        //Espera hasta que searchBar  esta visible para evitar fallo
         waitUntilVisibility(locators.getSearchBarTxt());
 
+        //Realizamos busqueda y validacion de cada termino
         for (int i = 0; i < data.size(); i++) {
-            type(locators.getSearchBarTxt(), data.get(i).get("Termino"));
-            click(locators.getSearchBtn());
+            type(locators.getSearchBarTxt(), data.get(i).get("Termino")); //Se copia el termino
+            click(locators.getSearchBtn()); //Se da click en buscar
 
-            click(locators.getFirstResultBtn());
-            waitUntilVisibility(locators.getCloseSurveyBtn()); //Validamos si aparecio la encuesta
+            click(locators.getFirstResultBtn()); //Se da click en el primer resultado
+            waitUntilVisibility(locators.getCloseSurveyBtn()); //Validamos si aparecio la encuesta para cerrarla
+
+            //Se compara el titulo del producto seleccionado con el esperado
             validate(SeleniumWebDriver.driver.getTitle(), data.get(i).get("Titulo_Producto"));
         }
     }
 
     public void validate(String text, String text2) {
+        //Esperamos que cargue el titulo correctamente
         WebDriverWait wait = new WebDriverWait(SeleniumWebDriver.driver, 3);
         wait.until(ExpectedConditions.titleContains(text));
         assertEquals(text, text2);

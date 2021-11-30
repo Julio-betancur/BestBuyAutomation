@@ -11,6 +11,8 @@ public class BestBuyPageObjects {
     private By firstResultBtn = By.xpath("(//h4[@class='sku-header'])[1]/a");
     private By closeSurveyBtn = By.xpath("//button[@id='survey_invite_no']");
 
+    private By closeModalBtn = By.xpath("//button[@class='c-close-icon c-modal-close-icon']");
+
 
     public By getUsaBtn() {
         return usaBtn;
@@ -34,5 +36,9 @@ public class BestBuyPageObjects {
 
     public By getCloseSurveyBtn() {
         return closeSurveyBtn;
+    }
+
+    public By getCloseModalBtn() {
+        return closeModalBtn;
     }
 }
