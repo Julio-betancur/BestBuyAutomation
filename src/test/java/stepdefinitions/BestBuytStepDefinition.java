@@ -30,7 +30,7 @@ public class BestBuytStepDefinition {
 
     @Then("^la pagina me muestra un producto que coincide con el buscado$")
     public void laPaginaMeMuestraUnProductoQueCoincideConElBuscado() {
-
+        SeleniumWebDriver.driver.quit();
     }
 
 }
